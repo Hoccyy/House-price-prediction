@@ -8,7 +8,7 @@ import pickle
 from matplotlib import style
 
 # Load the data
-data = pd.read_csv('train.csv', sep=',')
+data = pd.read_csv('train.csv')
 
 # Last value included to be dropped but also for test set
 data = data[['LotArea', 'YearBuilt', 'TotRmsAbvGrd', 'Fireplaces', 'GarageCars', 'GarageArea', 'MSSubClass', 'OverallQual', 'OverallCond', 'YearRemodAdd', 'BsmtFinSF1', 'BsmtFinSF2', 'BsmtUnfSF', 'TotalBsmtSF', '1stFlrSF', '2ndFlrSF', 'LowQualFinSF', 'GrLivArea', 'GarageCars', 'GarageArea', 'YrSold', 'WoodDeckSF', 'SalePrice']]
@@ -36,9 +36,13 @@ for i in range (len(predictions)):
 
 print (accuracy)
 
-p = 'GrLivArea'
-style.use('ggplot')
-pyplot.scatter(data[p], data['YearBuilt'])
-pyplot.xlabel(p)
-pyplot.ylabel('SalePrice')
-pyplot.show()
+# Plotting
+
+if False:
+    p = 'GrLivArea'
+    style.use('ggplot')
+    pyplot.scatter(data[p], data['YearBuilt'])
+    pyplot.xlabel(p)
+    pyplot.ylabel('SalePrice')
+    pyplot.show()
+    
