@@ -35,3 +35,10 @@ for i in range (len(predictions)):
     print ("Guess $" + str(predictions[i]) + "    |     Real $" + str(y_test[i]))
 
 print (accuracy)
+
+p = 'GrLivArea'
+style.use('ggplot')
+pyplot.scatter(data[p], data['YearBuilt'])
+pyplot.xlabel(p)
+pyplot.ylabel('SalePrice')
+pyplot.show()
